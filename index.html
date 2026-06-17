@@ -1,0 +1,3902 @@
+<!DOCTYPE html>
+<html lang="ta">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Justin Scholarship Portal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Tamil:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins','Noto Sans Tamil',sans-serif;
+background:#f6f9ff;
+color:#0b1f4d;
+overflow-x:hidden;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:0 20px;
+}
+/* =========================
+   PREMIUM HEADER
+========================= */
+
+.header{
+background:#ffffff;
+
+position:sticky;
+top:0;
+z-index:999;
+
+box-shadow:
+0 10px 30px rgba(15,23,42,.06);
+
+border-bottom:
+1px solid rgba(226,232,240,.8);
+}
+
+.header .container{
+max-width:1200px;
+margin:auto;
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+padding:18px 24px;
+}
+
+/* LOGO */
+
+.logo{
+display:flex;
+align-items:center;
+gap:16px;
+}
+
+.logo-box{
+width:68px;
+height:68px;
+
+min-width:68px;
+
+border-radius:18px;
+
+background:
+linear-gradient(
+135deg,
+#2563EB,
+#1D4ED8
+);
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+overflow:hidden;
+
+box-shadow:
+0 15px 35px rgba(37,99,235,.25);
+}
+
+.logo-box img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
+
+.logo-box span{
+font-size:32px;
+font-weight:800;
+color:white;
+}
+
+.logo h2{
+margin:0;
+
+font-size:2rem;
+font-weight:800;
+
+line-height:1.1;
+
+color:#0F2D68;
+}
+
+.logo p{
+margin-top:4px;
+
+font-size:.95rem;
+font-weight:500;
+
+color:#64748B;
+}
+
+/* NAVIGATION */
+
+nav{
+display:flex;
+align-items:center;
+gap:28px;
+}
+
+nav a{
+text-decoration:none;
+
+font-size:15px;
+font-weight:600;
+
+color:#0F2D68;
+
+transition:.3s;
+}
+
+nav a:hover{
+color:#2563EB;
+}
+
+/* LANGUAGE BUTTON */
+
+.lang-btn{
+background:
+linear-gradient(
+135deg,
+#2563EB,
+#1D4ED8
+);
+
+color:white;
+
+border:none;
+
+padding:12px 20px;
+
+border-radius:14px;
+
+font-weight:600;
+
+cursor:pointer;
+
+box-shadow:
+0 10px 25px rgba(37,99,235,.25);
+
+transition:.3s;
+}
+
+.lang-btn:hover{
+transform:translateY(-2px);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.header .container{
+padding:14px 16px;
+}
+
+.logo-box{
+width:58px;
+height:58px;
+min-width:58px;
+}
+
+.logo h2{
+font-size:1.45rem;
+}
+
+.logo p{
+font-size:.82rem;
+}
+
+nav{
+display:none;
+}
+
+.lang-btn{
+padding:10px 16px;
+font-size:.85rem;
+}
+
+}
+
+/* =========================
+   PREMIUM HERO SECTION
+========================= */
+
+.hero{
+padding:90px 20px;
+background:
+linear-gradient(
+180deg,
+#F8FAFF 0%,
+#EEF4FF 100%
+);
+overflow:hidden;
+}
+
+.hero-grid{
+max-width:1200px;
+margin:auto;
+
+display:grid;
+grid-template-columns:1.1fr .9fr;
+gap:60px;
+
+align-items:center;
+}
+
+/* LEFT */
+
+.hero-left h1{
+font-size:clamp(2.6rem,5vw,4.5rem);
+
+font-weight:800;
+
+line-height:1.1;
+
+letter-spacing:-1px;
+
+color:#0F2D68;
+
+margin-bottom:24px;
+}
+
+.hero-left p{
+font-size:1.15rem;
+
+line-height:1.9;
+
+color:#64748B;
+
+margin-bottom:35px;
+
+max-width:650px;
+}
+
+.hero-buttons{
+display:flex;
+gap:16px;
+flex-wrap:wrap;
+}
+
+.primary-btn{
+background:
+linear-gradient(
+135deg,
+#2563EB,
+#1D4ED8
+);
+
+color:white;
+
+padding:16px 32px;
+
+border-radius:16px;
+
+text-decoration:none;
+
+font-weight:700;
+
+box-shadow:
+0 15px 35px rgba(37,99,235,.25);
+
+transition:.3s;
+}
+
+.primary-btn:hover{
+transform:translateY(-3px);
+}
+
+.secondary-btn{
+background:white;
+
+border:1px solid #E2E8F0;
+
+padding:16px 32px;
+
+border-radius:16px;
+
+text-decoration:none;
+
+color:#0F2D68;
+
+font-weight:700;
+
+box-shadow:
+0 10px 30px rgba(15,23,42,.05);
+
+transition:.3s;
+}
+
+.secondary-btn:hover{
+transform:translateY(-3px);
+}
+
+/* RIGHT */
+
+.hero-right{
+display:flex;
+flex-direction:column;
+align-items:center;
+width:100%;
+gap:20px;
+}
+
+.hero-right img{
+width:100%;
+max-width:500px;
+
+border-radius:30px;
+
+filter:
+drop-shadow(0 30px 60px rgba(37,99,235,.15));
+}
+
+/* FLOATING CARDS */
+
+.side-card{
+width:100%;
+max-width:650px;
+background:#fff;
+border-radius:28px;
+padding:28px;
+display:flex;
+align-items:center;
+gap:20px;
+margin:0 auto;
+box-sizing:border-box;
+box-shadow:0 12px 35px rgba(15,76,255,.08);
+}
+
+.side-card:hover{
+transform:translateY(-4px);
+}
+
+.icon{
+width:55px;
+height:55px;
+
+border-radius:16px;
+
+background:
+linear-gradient(
+135deg,
+#DBEAFE,
+#BFDBFE
+);
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:24px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.hero-left p{
+margin-left:auto;
+margin-right:auto;
+}
+
+.hero-buttons{
+justify-content:center;
+}
+
+.hero-right{
+margin-top:10px;
+}
+
+}
+
+@media(max-width:768px){
+
+.hero{
+padding:70px 16px;
+}
+
+.hero-left h1{
+font-size:2.4rem;
+}
+
+.hero-left p{
+font-size:1rem;
+}
+
+.primary-btn,
+.secondary-btn{
+width:100%;
+text-align:center;
+}
+
+.hero-buttons{
+flex-direction:column;
+}
+
+.side-card{
+padding:16px;
+}
+
+}
+
+/* =========================
+   PREMIUM MOBILE RESPONSIVE
+========================= */
+
+@media (max-width:768px){
+
+.container{
+width:100%;
+max-width:100%;
+padding:0 18px;
+}
+
+/* HEADER */
+
+.header .container{
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+@media(max-width:768px){
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo-box{
+width:55px;
+height:55px;
+min-width:55px;
+}
+
+.logo h2{
+font-size:20px;
+line-height:1.1;
+margin:0;
+}
+
+.logo p{
+font-size:12px;
+margin-top:3px;
+}
+
+}
+
+.features-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+@media(max-width:768px){
+
+.features-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+/* HERO */
+
+.hero{
+padding:60px 0;
+}
+
+.hero-grid{
+display:flex;
+flex-direction:column;
+gap:35px;
+text-align:center;
+}
+
+.hero-left,
+.hero-right{
+width:100%;
+}
+
+.hero-left h1{
+font-size:2.3rem;
+line-height:1.15;
+letter-spacing:-0.5px;
+}
+
+.hero-left p{
+font-size:1rem;
+line-height:1.8;
+max-width:100%;
+}
+
+.hero-buttons{
+display:flex;
+flex-direction:column;
+gap:12px;
+width:100%;
+}
+
+.primary-btn,
+.secondary-btn{
+width:100%;
+text-align:center;
+padding:15px;
+}
+
+/* IMAGE */
+
+.hero-right img{
+width:100%;
+max-width:320px;
+margin:auto;
+display:block;
+}
+
+/* FLOATING CARDS */
+
+.side-card{
+width:100%;
+max-width:340px;
+margin:auto;
+
+padding:18px;
+}
+
+.side-card h4{
+font-size:1.1rem;
+margin-bottom:4px;
+}
+
+.side-card p{
+font-size:.9rem;
+}
+
+/* FAQ */
+
+.faq-question{
+font-size:1rem;
+line-height:1.5;
+}
+
+.faq-answer{
+font-size:.92rem;
+}
+
+/* FOOTER */
+
+.footer{
+text-align:center;
+}
+
+}
+
+/* EXTRA SMALL DEVICES */
+
+@media (max-width:480px){
+
+.logo h2{
+font-size:1.2rem;
+}
+
+.logo p{
+font-size:.75rem;
+}
+
+.hero-left h1{
+font-size:2rem;
+}
+
+.hero-left p{
+font-size:.95rem;
+}
+
+.logo-box{
+width:50px;
+height:50px;
+min-width:50px;
+}
+
+}
+
+/* GLOBAL FIXES */
+
+body{
+overflow-x:hidden;
+}
+
+img{
+max-width:100%;
+height:auto;
+display:block;
+}
+
+section{
+overflow:hidden;
+}
+
+.side-card{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.side-card div:last-child{
+flex:1;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+/* =========================
+   PREMIUM NOTICE SECTION
+========================= */
+
+.notice-section{
+padding:35px 20px;
+}
+
+.notice-box{
+
+background:
+linear-gradient(
+135deg,
+#FFFDF7 0%,
+#FFF8E8 100%
+);
+
+border:none;
+
+border-radius:24px;
+
+padding:24px;
+
+display:flex;
+align-items:center;
+gap:18px;
+
+box-shadow:
+0 12px 35px rgba(245,158,11,.08);
+
+overflow:hidden;
+
+position:relative;
+}
+
+.notice-box::before{
+
+content:"";
+
+position:absolute;
+
+left:0;
+top:0;
+bottom:0;
+
+width:6px;
+
+background:
+linear-gradient(
+180deg,
+#F59E0B,
+#FBBF24
+);
+
+border-radius:0 20px 20px 0;
+}
+
+/* ICON */
+
+.notice-icon{
+
+width:65px;
+height:65px;
+
+min-width:65px;
+
+border-radius:18px;
+
+background:
+linear-gradient(
+135deg,
+#FEF3C7,
+#FDE68A
+);
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+box-shadow:
+0 10px 25px rgba(245,158,11,.15);
+}
+
+.notice-icon svg{
+width:34px;
+height:34px;
+}
+
+/* TEXT */
+
+.notice-text{
+display:flex;
+flex-direction:column;
+gap:8px;
+}
+
+.notice-text strong{
+
+font-size:18px;
+font-weight:700;
+
+color:#92400E;
+}
+
+.notice-text span{
+
+font-size:15px;
+
+line-height:1.8;
+
+color:#78350F;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.notice-box{
+
+flex-direction:column;
+
+text-align:center;
+
+padding:22px;
+}
+
+.notice-icon{
+width:58px;
+height:58px;
+min-width:58px;
+}
+
+.notice-text strong{
+font-size:17px;
+}
+
+.notice-text span{
+font-size:14px;
+}
+
+}
+
+/* TITLE */
+
+.section-title{
+text-align:center;
+font-size:32px;
+margin-bottom:35px;
+}
+
+/* SCHOLARSHIP */
+
+.scholarship-types{
+padding:50px 0;
+}
+
+.scholarship-grid{
+display:grid;
+grid-template-columns:repeat(6,1fr);
+gap:20px;
+}
+
+.scholarship-card{
+background:white;
+padding:25px 15px;
+border-radius:18px;
+text-align:center;
+box-shadow:0 8px 20px rgba(0,0,0,.05);
+transition:.3s;
+}
+
+.scholarship-card:hover{
+transform:translateY(-5px);
+}
+
+.scholarship-icon{
+font-size:36px;
+margin-bottom:10px;
+}
+
+.scholarship-card h4{
+font-size:15px;
+margin-bottom:5px;
+}
+
+.scholarship-card p{
+font-size:13px;
+color:#666;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.notice-box{
+flex-direction:column;
+text-align:center;
+}
+
+.section-title{
+font-size:24px;
+}
+
+.scholarship-grid{
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+}
+
+.scholarship-icon{
+width:72px;
+height:72px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:0 auto 18px;
+}
+
+.scholarship-icon svg{
+width:38px;
+height:38px;
+}
+
+.govt{background:#DCFCE7;}
+.private{background:#DBEAFE;}
+.minority{background:#F3E8FF;}
+.scst{background:#FFEDD5;}
+.bcmbc{background:#DBEAFE;}
+.merit{background:#FCE7F3;}
+/* PART C */
+
+.eligibility-flow{
+padding:60px 0;
+}
+
+.flow-layout{
+display:grid;
+grid-template-columns:1fr 1.3fr;
+gap:25px;
+}
+
+.eligibility-card,
+.service-card{
+
+background:#fff;
+
+border-radius:24px;
+
+padding:30px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.05);
+
+}
+
+.eligibility-card h2,
+.service-card h2{
+
+font-size:28px;
+
+margin-bottom:10px;
+
+color:#0B1F4D;
+
+}
+
+.eligibility-card p{
+color:#666;
+margin-bottom:25px;
+}
+
+.education-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:12px;
+
+margin-bottom:25px;
+
+}
+
+.edu-card{
+
+background:#f8faff;
+
+border:2px solid #eef2ff;
+
+border-radius:18px;
+
+padding:15px;
+
+text-align:center;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.edu-card:hover{
+
+border-color:#0F4CFF;
+
+transform:translateY(-3px);
+
+}
+
+.edu-icon{
+
+width:50px;
+
+height:50px;
+
+margin:auto;
+
+background:#e8efff;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-weight:700;
+
+color:#0F4CFF;
+
+margin-bottom:10px;
+
+}
+
+.check-btn{
+
+width:100%;
+
+background:#16a34a;
+
+border:none;
+
+padding:16px;
+
+color:white;
+
+border-radius:16px;
+
+font-size:16px;
+
+font-weight:600;
+
+cursor:pointer;
+
+}
+
+.flow-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+margin-top:25px;
+
+}
+
+.flow-item{
+
+display:flex;
+
+align-items:flex-start;
+
+gap:15px;
+
+}
+
+.flow-number{
+
+width:42px;
+
+height:42px;
+
+background:#eef4ff;
+
+border:2px solid #0F4CFF;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-weight:700;
+
+color:#0F4CFF;
+
+flex-shrink:0;
+
+}
+
+.flow-item h4{
+
+font-size:16px;
+
+margin-bottom:4px;
+
+}
+
+.flow-item p{
+
+font-size:14px;
+
+color:#666;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.flow-layout{
+grid-template-columns:1fr;
+}
+
+.eligibility-card,
+.service-card{
+padding:20px;
+}
+
+.eligibility-card h2,
+.service-card h2{
+font-size:22px;
+}
+
+.education-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/* PART D */
+
+.documents-section{
+padding:80px 0;
+}
+
+.section-heading{
+text-align:center;
+font-size:38px;
+color:#0B1F4D;
+margin-bottom:10px;
+}
+
+.section-subtitle{
+text-align:center;
+color:#64748B;
+margin-bottom:50px;
+}
+
+.documents-grid{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+margin-bottom:50px;
+
+}
+
+.doc-card{
+
+background:white;
+
+padding:22px;
+
+border-radius:22px;
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+box-shadow:0 8px 20px rgba(0,0,0,.05);
+
+transition:.3s;
+
+}
+
+.doc-card:hover{
+transform:translateY(-5px);
+}
+
+.doc-icon{
+
+width:65px;
+height:65px;
+
+border-radius:18px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+}
+
+.doc-icon svg{
+width:34px;
+height:34px;
+}
+
+.aadhaar{background:#DBEAFE;}
+.income{background:#DCFCE7;}
+.mark{background:#F3E8FF;}
+.bank{background:#FFEDD5;}
+.community{background:#FCE7F3;}
+.photo{background:#CFFAFE;}
+
+.doc-card h4{
+font-size:18px;
+margin-bottom:4px;
+}
+
+.doc-card p{
+font-size:14px;
+color:#64748B;
+}
+
+/* SERVICE */
+
+.service-grid{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+
+}
+
+.price-card{
+
+padding:35px;
+
+border-radius:24px;
+
+color:white;
+
+box-shadow:0 15px 30px rgba(0,0,0,.08);
+
+}
+
+.verification{
+background:linear-gradient(135deg,#0F4CFF,#2563EB);
+}
+
+.application{
+background:linear-gradient(135deg,#F59E0B,#EA580C);
+}
+
+.disclaimer{
+background:linear-gradient(135deg,#7C3AED,#9333EA);
+}
+
+.price{
+
+font-size:52px;
+font-weight:800;
+margin:15px 0;
+
+}
+
+.price-card ul{
+padding-left:18px;
+line-height:2;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.documents-grid{
+grid-template-columns:1fr;
+}
+
+.service-grid{
+grid-template-columns:1fr;
+}
+
+.section-heading{
+font-size:28px;
+}
+
+.doc-card{
+padding:18px;
+}
+
+.price{
+font-size:42px;
+}
+
+}
+
+/* =========================
+   PREMIUM FAQ SECTION
+========================= */
+
+.faq-section{
+    padding:90px 20px;
+    background:linear-gradient(180deg,#F8FAFF 0%,#EEF4FF 100%);
+}
+
+.faq-container{
+    max-width:900px;
+    margin:auto;
+}
+
+.faq-item{
+
+    background:#FFFFFF;
+
+    border:none;
+
+    border-radius:28px;
+
+    margin-bottom:20px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 10px 30px rgba(15,23,42,.06);
+
+    transition:all .35s ease;
+}
+
+.faq-item:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 20px 45px rgba(15,23,42,.12);
+}
+
+.faq-item.active{
+
+    box-shadow:
+    0 25px 55px rgba(37,99,235,.18);
+
+    border-left:5px solid #2563EB;
+}
+
+.faq-question{
+
+    width:100%;
+
+    padding:26px 28px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:18px;
+
+    cursor:pointer;
+
+    background:#FFFFFF;
+
+    border:none;
+
+    outline:none;
+
+    font-size:1.18rem;
+
+    font-weight:700;
+
+    color:#0F2D68;
+
+    line-height:1.6;
+
+    text-align:left;
+}
+
+.faq-question:hover{
+    background:#FAFCFF;
+}
+
+.faq-text{
+    flex:1;
+}
+
+.faq-icon{
+
+    width:46px;
+    height:46px;
+
+    min-width:46px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+    135deg,
+    #2563EB,
+    #3B82F6
+    );
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    box-shadow:
+    0 10px 25px rgba(37,99,235,.25);
+
+    transition:.3s ease;
+}
+
+.faq-item.active .faq-icon{
+
+    transform:rotate(45deg);
+
+    background:linear-gradient(
+    135deg,
+    #0F2D68,
+    #2563EB
+    );
+}
+
+.faq-answer{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:all .4s ease;
+
+    color:#475569;
+
+    font-size:15px;
+
+    line-height:1.9;
+
+    padding:0 28px;
+}
+
+.faq-item.active .faq-answer{
+
+    max-height:500px;
+
+    padding:0 28px 28px 28px;
+}
+
+.faq-answer-inner{
+
+    border-top:1px solid #E5E7EB;
+
+    padding-top:20px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .faq-section{
+        padding:70px 16px;
+    }
+
+    .faq-question{
+
+        padding:22px;
+
+        font-size:1rem;
+    }
+
+    .faq-icon{
+
+        width:40px;
+        height:40px;
+        min-width:40px;
+
+        font-size:20px;
+    }
+
+    .faq-answer{
+        font-size:14px;
+    }
+
+}
+
+/* LARGE SCREENS */
+
+@media(min-width:1200px){
+
+    .faq-container{
+        max-width:1000px;
+    }
+
+}
+/* CONTACT */
+
+.contact-section{
+padding:80px 0;
+}
+
+.contact-card{
+
+background:white;
+
+padding:40px;
+
+border-radius:30px;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:30px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.05);
+
+}
+
+.contact-left h2{
+font-size:34px;
+margin-bottom:15px;
+}
+
+.contact-info{
+margin-top:25px;
+}
+
+.contact-row{
+margin-bottom:15px;
+font-weight:500;
+}
+
+.facebook-btn{
+
+display:inline-block;
+
+background:#1877F2;
+
+color:white;
+
+padding:16px 28px;
+
+border-radius:16px;
+
+text-decoration:none;
+
+font-weight:600;
+
+}
+
+
+/* FOOTER */
+
+.footer{
+
+background:#0B1F4D;
+
+padding:60px 0;
+
+text-align:center;
+
+color:white;
+
+}
+
+.footer h3{
+margin-bottom:10px;
+}
+
+.footer-links{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+margin:25px 0;
+
+flex-wrap:wrap;
+
+}
+
+.footer-links a{
+
+color:white;
+
+text-decoration:none;
+
+}
+
+.copyright{
+opacity:.8;
+}
+
+
+/* WHATSAPP */
+
+.whatsapp-float{
+
+position:fixed;
+
+right:20px;
+
+bottom:20px;
+
+width:60px;
+
+height:60px;
+
+background:#25D366;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+z-index:999;
+
+}
+
+.whatsapp-float svg{
+width:28px;
+height:28px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.contact-card{
+grid-template-columns:1fr;
+padding:25px;
+}
+
+.contact-left h2{
+font-size:28px;
+}
+
+.whatsapp-float{
+width:55px;
+height:55px;
+}
+
+}
+
+/* PREMIUM LOADER */
+
+#loader{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+background:#f8fafc;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:99999;
+transition:0.5s;
+}
+
+.loader-box{
+text-align:center;
+}
+
+.loader-logo{
+width:90px;
+height:90px;
+margin:auto;
+background:linear-gradient(135deg,#0f5eff,#0048d8);
+border-radius:24px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:42px;
+font-weight:800;
+color:white;
+box-shadow:0 20px 40px rgba(15,94,255,.25);
+margin-bottom:20px;
+}
+
+.loader-box h2{
+font-size:24px;
+font-weight:800;
+color:#06245f;
+margin-bottom:5px;
+}
+
+.loader-box p{
+color:#64748b;
+margin-bottom:20px;
+}
+
+.loading-bar{
+width:220px;
+height:8px;
+background:#e5e7eb;
+border-radius:50px;
+overflow:hidden;
+margin:auto;
+}
+
+.loading-bar span{
+display:block;
+height:100%;
+width:40%;
+background:linear-gradient(90deg,#0f5eff,#3b82f6);
+animation:loading 1.2s infinite;
+border-radius:50px;
+}
+
+@keyframes loading{
+0%{
+transform:translateX(-100%);
+}
+100%{
+transform:translateX(300%);
+}
+}
+
+.loader-box small{
+display:block;
+margin-top:15px;
+color:#64748b;
+font-size:14px;
+}
+
+.service-benefits{
+padding:70px 20px;
+background:#f7f9ff;
+}
+
+.section-title{
+font-size:34px;
+font-weight:800;
+color:#06245f;
+text-align:center;
+margin-bottom:12px;
+}
+
+.section-subtitle{
+text-align:center;
+color:#64748b;
+font-size:16px;
+margin-bottom:35px;
+}
+
+.benefits-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:16px;
+}
+
+.benefit-card{
+background:#fff;
+border-radius:24px;
+padding:22px 16px;
+text-align:center;
+box-shadow:0 10px 35px rgba(0,0,0,.06);
+transition:.3s;
+}
+
+.benefit-card:hover{
+transform:translateY(-4px);
+}
+
+.benefit-icon{
+width:68px;
+height:68px;
+margin:auto;
+margin-bottom:16px;
+border-radius:18px;
+background:#edf4ff;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#0f5eff;
+}
+
+.benefit-icon svg{
+width:34px;
+height:34px;
+}
+
+.benefit-card h3{
+font-size:17px;
+font-weight:700;
+color:#06245f;
+margin-bottom:8px;
+}
+
+.benefit-card p{
+font-size:14px;
+color:#64748b;
+line-height:1.5;
+}
+
+@media(max-width:768px){
+
+.section-title{
+font-size:28px;
+}
+
+.benefits-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+/*FOOTER*/
+
+/* PREMIUM FOOTER */
+
+.premium-footer{
+
+background:#071b4d;
+
+padding:70px 20px 30px;
+
+margin-top:60px;
+
+}
+
+.footer-container{
+max-width:1200px;
+margin:auto;
+}
+
+.footer-title{
+
+text-align:center;
+
+font-size:36px;
+
+font-weight:800;
+
+color:white;
+
+margin-bottom:8px;
+
+}
+
+.footer-brand{
+
+text-align:center;
+
+color:#9fb4ff;
+
+letter-spacing:2px;
+
+font-size:13px;
+
+margin-bottom:45px;
+
+}
+
+.footer-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:18px;
+
+}
+
+.footer-card{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(12px);
+
+padding:20px;
+
+border-radius:22px;
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.footer-icon{
+
+width:58px;
+height:58px;
+
+border-radius:16px;
+
+background:rgba(255,255,255,.12);
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+color:#ffffff;
+
+flex-shrink:0;
+
+}
+
+.footer-icon svg{
+width:28px;
+height:28px;
+}
+
+.footer-card h4{
+
+color:white;
+
+font-size:16px;
+
+margin-bottom:5px;
+
+}
+
+.footer-card p{
+
+color:#d6e1ff;
+
+font-size:14px;
+
+word-break:break-word;
+
+}
+
+.footer-bottom{
+
+text-align:center;
+
+margin-top:35px;
+
+padding-top:25px;
+
+border-top:1px solid rgba(255,255,255,.1);
+
+}
+
+.footer-bottom p{
+
+color:#9fb4ff;
+
+font-size:13px;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.footer-title{
+font-size:28px;
+}
+
+.footer-grid{
+grid-template-columns:1fr;
+}
+
+.footer-card{
+padding:18px;
+}
+
+}
+
+.legal-disclaimer{
+
+background:#ffffff;
+
+border-radius:28px;
+
+padding:30px;
+
+margin-top:25px;
+
+box-shadow:
+0 10px 35px rgba(0,0,0,.06);
+
+border:1px solid #eef2ff;
+
+}
+
+.legal-icon{
+
+width:70px;
+height:70px;
+
+margin:auto;
+
+background:#eef4ff;
+
+border-radius:20px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:34px;
+
+margin-bottom:20px;
+
+}
+
+.legal-disclaimer h3{
+
+text-align:center;
+
+font-size:28px;
+
+font-weight:800;
+
+color:#082b6d;
+
+margin-bottom:20px;
+
+}
+
+.legal-disclaimer p{
+
+font-size:15px;
+
+line-height:1.9;
+
+color:#4b5563;
+
+margin-bottom:15px;
+
+}
+
+@media(max-width:768px){
+
+.legal-disclaimer{
+
+padding:22px;
+
+border-radius:22px;
+
+}
+
+.legal-disclaimer h3{
+
+font-size:22px;
+
+}
+
+}
+
+.law-note{
+
+margin-top:20px;
+
+padding:14px;
+
+background:#f8fafc;
+
+border-left:4px solid #2563eb;
+
+border-radius:12px;
+
+font-size:14px;
+
+font-weight:600;
+
+color:#1e3a8a;
+
+}
+.legal-icon{
+
+width:90px;
+height:90px;
+
+background:linear-gradient(
+135deg,
+#2563EB,
+#1D4ED8
+);
+
+border-radius:50%;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+margin:0 auto 24px;
+
+box-shadow:
+0 12px 30px rgba(37,99,235,.35);
+
+}
+
+.legal-icon svg{
+
+width:46px;
+height:46px;
+
+}
+
+.legal-icon svg path{
+stroke:white;
+}
+
+/* ===================================
+   PREMIUM PRICING CARDS V2.0
+=================================== */
+
+.pricing-section{
+    padding:60px 20px;
+}
+
+.pricing-grid{
+    display:grid;
+    gap:24px;
+    max-width:1400px;
+    margin:auto;
+}
+
+.pricing-card{
+    position:relative;
+    overflow:hidden;
+
+    min-height:420px;
+
+    padding:32px;
+
+    border-radius:32px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    box-shadow:
+    0 25px 50px rgba(15,23,42,.15),
+    0 10px 25px rgba(15,23,42,.10);
+
+    transition:.35s ease;
+}
+
+.pricing-card:hover{
+    transform:translateY(-8px);
+}
+
+.blue-card{
+    background:
+    linear-gradient(
+    135deg,
+    #0F5FFF 0%,
+    #2563EB 50%,
+    #1D4ED8 100%
+    );
+}
+
+.orange-card{
+    background:
+    linear-gradient(
+    135deg,
+    #FF8A00 0%,
+    #FF6B00 50%,
+    #F97316 100%
+    );
+}
+
+.purple-card{
+    background:
+    linear-gradient(
+    135deg,
+    #8B5CF6 0%,
+    #9333EA 50%,
+    #A855F7 100%
+    );
+}
+
+/* SVG */
+
+.plan-icon{
+    width:72px;
+    height:72px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(255,255,255,.15);
+
+    border-radius:20px;
+
+    backdrop-filter:blur(10px);
+}
+
+.plan-icon svg{
+    width:40px;
+    height:40px;
+}
+
+/* TITLE */
+
+.pricing-card h3{
+    color:#fff;
+
+    font-size:2rem;
+    font-weight:800;
+
+    line-height:1.3;
+
+    margin:24px 0 18px;
+}
+
+/* PRICE */
+
+.price{
+    color:#fff;
+
+    font-size:4.8rem;
+    font-weight:800;
+
+    line-height:1;
+
+    margin-bottom:24px;
+}
+
+.price.custom{
+    font-size:3rem;
+}
+
+/* LIST */
+
+.pricing-card ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+.pricing-card ul li{
+    color:#fff;
+
+    font-size:1.05rem;
+    font-weight:500;
+
+    margin-bottom:14px;
+
+    display:flex;
+    align-items:center;
+}
+
+.pricing-card ul li::before{
+    content:"✓";
+
+    width:24px;
+    height:24px;
+
+    margin-right:10px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(255,255,255,.18);
+
+    border-radius:50%;
+}
+
+/* BUTTON */
+
+.pricing-btn{
+    width:100%;
+    height:58px;
+
+    margin-top:28px;
+
+    border:none;
+    border-radius:18px;
+
+    background:#fff;
+
+    color:#0F172A;
+
+    font-size:1rem;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.pricing-btn:hover{
+    transform:translateY(-2px);
+}
+
+/* TABLET */
+
+@media(min-width:768px){
+
+    .pricing-grid{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+}
+
+/* DESKTOP */
+
+@media(min-width:1200px){
+
+    .pricing-grid{
+        grid-template-columns:
+        repeat(3,1fr);
+    }
+
+}
+
+/* MOBILE */
+
+@media(max-width:767px){
+
+    .pricing-section{
+        padding:40px 16px;
+    }
+
+    .pricing-card{
+        min-height:auto;
+        padding:28px;
+    }
+
+    .pricing-card h3{
+        font-size:1.7rem;
+    }
+
+    .price{
+        font-size:4rem;
+    }
+
+    .price.custom{
+        font-size:2.5rem;
+    }
+
+    .plan-icon{
+        width:64px;
+        height:64px;
+    }
+
+}
+
+/* SMALL DEVICES */
+
+@media(max-width:380px){
+
+    .pricing-card h3{
+        font-size:1.5rem;
+    }
+
+    .price{
+        font-size:3.4rem;
+    }
+
+    .pricing-card ul li{
+        font-size:.95rem;
+    }
+
+}
+
+.faq-icon{
+width:42px;
+height:42px;
+
+border-radius:50%;
+
+background:
+linear-gradient(
+135deg,
+#2563EB,
+#1D4ED8
+);
+
+color:white;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:24px;
+font-weight:700;
+
+flex-shrink:0;
+
+box-shadow:
+0 8px 20px rgba(37,99,235,.25);
+}
+
+.brand-logo img{
+    width:72px;
+    height:72px;
+    object-fit:contain;
+    display:block;
+}
+
+.brand-text h1{
+    margin:0;
+    font-size:28px;
+    font-weight:800;
+    color:#0F2D68;
+}
+
+.brand-text p{
+    margin-top:6px;
+    color:#64748B;
+    font-size:15px;
+}
+
+@media(max-width:768px){
+
+    .brand-logo img{
+        width:64px;
+        height:64px;
+    }
+
+    .brand-text h1{
+        font-size:24px;
+    }
+
+}
+
+/* PREMIUM LOADER */
+
+#loader{
+position:fixed;
+inset:0;
+z-index:99999;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:
+linear-gradient(
+135deg,
+#f8fbff 0%,
+#eef4ff 50%,
+#ffffff 100%
+);
+}
+
+.premium-loader{
+position:relative;
+text-align:center;
+padding:40px;
+width:min(90%,420px);
+}
+
+.loader-glow{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:220px;
+height:220px;
+border-radius:50%;
+
+background:
+radial-gradient(
+circle,
+rgba(37,99,235,.20),
+transparent 70%
+);
+
+animation:pulseGlow 2s infinite;
+}
+
+.loader-logo{
+position:relative;
+z-index:2;
+
+width:110px;
+height:110px;
+
+margin:auto auto 24px;
+
+border-radius:32px;
+
+background:white;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+box-shadow:
+0 25px 50px rgba(37,99,235,.20);
+}
+
+.loader-logo img{
+width:70px;
+height:70px;
+object-fit:contain;
+}
+
+.premium-loader h1{
+margin:0;
+
+font-size:2rem;
+font-weight:800;
+
+color:#0F2D68;
+}
+
+.premium-loader p{
+margin:10px 0 25px;
+
+font-size:1rem;
+
+color:#64748B;
+}
+
+.loader-progress{
+width:100%;
+height:10px;
+
+overflow:hidden;
+
+border-radius:100px;
+
+background:#E2E8F0;
+}
+
+.loader-progress-fill{
+height:100%;
+width:0;
+
+border-radius:100px;
+
+background:
+linear-gradient(
+90deg,
+#2563EB,
+#3B82F6
+);
+
+animation:loadingBar 2s infinite;
+}
+
+.premium-loader small{
+display:block;
+
+margin-top:18px;
+
+font-size:.9rem;
+
+letter-spacing:.5px;
+
+color:#64748B;
+}
+
+@keyframes loadingBar{
+0%{
+width:0;
+}
+100%{
+width:100%;
+}
+}
+
+@keyframes pulseGlow{
+0%,100%{
+transform:translate(-50%,-50%) scale(1);
+opacity:.7;
+}
+50%{
+transform:translate(-50%,-50%) scale(1.2);
+opacity:1;
+}
+}
+
+@media(max-width:768px){
+
+.loader-logo{
+width:90px;
+height:90px;
+}
+
+.loader-logo img{
+width:55px;
+height:55px;
+}
+
+.premium-loader h1{
+font-size:1.6rem;
+}
+}
+/* =========================
+   PREMIUM CENTER HEADER
+========================= */
+
+.header{
+position:sticky;
+top:0;
+z-index:9999;
+
+background:#ffffff;
+
+box-shadow:
+0 8px 25px rgba(15,23,42,.06);
+
+border-bottom:
+1px solid #E5EAF3;
+}
+
+.header-banner{
+
+position:relative;
+
+height:90px;
+
+max-width:1200px;
+
+margin:auto;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:0 20px;
+}
+
+/* LOGO */
+
+.header-logo{
+
+position:absolute;
+
+left:20px;
+
+top:50%;
+
+transform:translateY(-50%);
+
+width:60px;
+height:60px;
+
+object-fit:contain;
+
+display:block;
+}
+
+/* TITLE */
+
+.header-banner h1{
+
+margin:0;
+
+text-align:center;
+
+font-size:32px;
+
+font-weight:800;
+
+letter-spacing:-0.5px;
+
+color:#0F2D68;
+
+line-height:1;
+}
+
+/* TABLET */
+
+@media(max-width:768px){
+
+.header-banner{
+height:80px;
+}
+
+.header-logo{
+
+left:15px;
+
+width:50px;
+height:50px;
+}
+
+.header-banner h1{
+font-size:20px;
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:480px){
+
+.header-banner{
+height:72px;
+}
+
+.header-logo{
+
+left:12px;
+
+width:42px;
+height:42px;
+}
+
+.header-banner h1{
+
+font-size:15px;
+
+max-width:75%;
+
+margin:auto;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- PREMIUM LOADER -->
+
+<div id="loader">
+
+    <div class="premium-loader">
+
+        <div class="loader-glow"></div>
+
+        <div class="loader-logo">
+            <img src="logo.png" alt="Justin Scholarship Portal">
+        </div>
+
+        <h1>Justin Scholarship Portal</h1>
+
+        <p>Scholarship Assistance Service</p>
+
+        <div class="loader-progress">
+            <div class="loader-progress-fill"></div>
+        </div>
+
+        <small>Preparing Scholarship Services...</small>
+
+    </div>
+
+</div>
+
+<!-- PREMIUM CENTER HEADER -->
+
+<header class="header">
+
+    <div class="header-banner">
+
+        <img src="logo.png"
+             alt="Justin Scholarship Portal"
+             class="header-logo">
+
+        <h1>JUSTIN SCHOLARSHIP PORTAL</h1>
+
+    </div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+<div class="hero-left">
+
+<h1>
+
+உங்கள் Scholarship
+விண்ணப்பத்தை
+
+நாங்கள்
+எளிமையாக்குகிறோம்
+
+</h1>
+
+<p>
+
+தகுதி சரிபார்ப்பு முதல்
+விண்ணப்ப சமர்ப்பிப்பு வரை
+முழு உதவியும் ஒரே இடத்தில்.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#" class="primary-btn">
+தகுதி சரிபார்க்கவும் (₹99)
+</a>
+
+<a href="#" class="secondary-btn">
+விண்ணப்பிக்கவும் (₹299)
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<img src="student.png" alt="Student">
+
+<div class="side-card">
+
+<div class="icon">
+<!-- Shield SVG -->
+<svg width="52" height="52" viewBox="0 0 24 24" fill="none">
+  <path d="M12 2L20 5V11C20 16.5 16.5 20.5 12 22C7.5 20.5 4 16.5 4 11V5L12 2Z"
+        stroke="#0F4CFF"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M9 12L11 14L15 10"
+        stroke="#0F4CFF"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+</svg>
+</div>
+
+<div>
+<h4>100%</h4>
+<p>வெளிப்படையான சேவை</p>
+</div>
+
+</div>
+
+<div class="side-card">
+
+<div class="icon">
+<!-- Headphone SVG -->
+<svg width="52" height="52" viewBox="0 0 24 24" fill="none">
+  <path d="M12 3C7.58 3 4 6.58 4 11V13"
+        stroke="#0F4CFF"
+        stroke-width="2"
+        stroke-linecap="round"/>
+
+  <path d="M20 13V11C20 6.58 16.42 3 12 3"
+        stroke="#0F4CFF"
+        stroke-width="2"
+        stroke-linecap="round"/>
+
+  <rect x="2.5" y="11" width="4" height="8" rx="2"
+        stroke="#0F4CFF"
+        stroke-width="2"/>
+
+  <rect x="17.5" y="11" width="4" height="8" rx="2"
+        stroke="#0F4CFF"
+        stroke-width="2"/>
+
+  <path d="M20 19C20 21 18.5 22 16 22H13"
+        stroke="#0F4CFF"
+        stroke-width="2"
+        stroke-linecap="round"/>
+
+  <circle cx="12" cy="22" r="1"
+          fill="#0F4CFF"/>
+</svg>
+</div>
+
+<div>
+<h4>மாணவர்</h4>
+<p>ஆதரவு குழு</p>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- NOTICE BAR -->
+
+<section class="notice-section">
+
+<div class="container">
+
+<div class="notice-box">
+
+<div class="notice-icon">
+
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+<path d="M12 9V13" stroke="#f59e0b" stroke-width="2"/>
+<circle cx="12" cy="17" r="1" fill="#f59e0b"/>
+<path d="M10.29 3.86L1.82 18A2 2 0 0 0 3.53 21H20.47A2 2 0 0 0 22.18 18L13.71 3.86A2 2 0 0 0 10.29 3.86Z"
+stroke="#f59e0b" stroke-width="2"/>
+</svg>
+
+</div>
+
+<div class="notice-text">
+
+<strong>முக்கிய அறிவிப்பு</strong>
+
+<span>
+நாங்கள் Scholarship வழங்கும் நிறுவனம் அல்ல.
+Scholarship Application Assistance Service மட்டும் வழங்குகிறோம்.
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SCHOLARSHIP TYPES -->
+
+<section class="scholarship-types">
+
+<div class="container">
+
+<h2 class="section-title">
+
+நாங்கள் உதவி செய்யும் Scholarship வகைகள்
+
+</h2>
+
+<div class="scholarship-grid">
+
+<div class="scholarship-card">
+
+<div class="scholarship-icon govt">
+<svg viewBox="0 0 24 24" fill="none">
+<path d="M3 21H21" stroke="#16A34A" stroke-width="2"/>
+<path d="M5 21V10" stroke="#16A34A" stroke-width="2"/>
+<path d="M12 21V10" stroke="#16A34A" stroke-width="2"/>
+<path d="M19 21V10" stroke="#16A34A" stroke-width="2"/>
+<path d="M2 10L12 4L22 10" stroke="#16A34A" stroke-width="2"/>
+</svg>
+</div>
+
+<h4>அரசு Scholarships</h4>
+
+<p>Government Scholarships</p>
+
+</div>
+
+
+<div class="scholarship-card">
+
+<div class="scholarship-icon private">
+<svg viewBox="0 0 24 24" fill="none">
+<path d="M12 3L21 8L12 13L3 8L12 3Z"
+stroke="#2563EB" stroke-width="2"/>
+<path d="M6 10V15C6 17 9 19 12 19C15 19 18 17 18 15V10"
+stroke="#2563EB" stroke-width="2"/>
+</svg>
+</div>
+
+<h4>தனியார் Scholarships</h4>
+
+<p>Private Scholarships</p>
+
+</div>
+
+
+<div class="scholarship-card">
+
+<div class="scholarship-icon minority">
+<svg viewBox="0 0 24 24" fill="none">
+<circle cx="8" cy="8" r="3" stroke="#9333EA" stroke-width="2"/>
+<circle cx="16" cy="8" r="3" stroke="#9333EA" stroke-width="2"/>
+<path d="M4 19C4 15 6.5 13 8 13C9.5 13 12 15 12 19"
+stroke="#9333EA" stroke-width="2"/>
+<path d="M12 19C12 15 14.5 13 16 13C17.5 13 20 15 20 19"
+stroke="#9333EA" stroke-width="2"/>
+</svg>
+</div>
+
+<h4>சிறுபான்மை Scholarships</h4>
+
+<p>Minority Scholarships</p>
+
+</div>
+
+
+<div class="scholarship-card">
+
+<div class="scholarship-icon scst">
+<svg viewBox="0 0 24 24" fill="none">
+<path d="M7 3H17L21 9L17 21H7L3 9L7 3Z"
+stroke="#F97316" stroke-width="2"/>
+<path d="M8 10H16" stroke="#F97316" stroke-width="2"/>
+<path d="M8 14H14" stroke="#F97316" stroke-width="2"/>
+</svg>
+</div>
+
+<h4>SC / ST Scholarships</h4>
+
+<p>SC / ST Students</p>
+
+</div>
+
+
+<div class="scholarship-card">
+
+<div class="scholarship-icon bcmbc">
+<svg viewBox="0 0 24 24" fill="none">
+<circle cx="12" cy="8" r="4" stroke="#2563EB" stroke-width="2"/>
+<path d="M5 21L12 17L19 21V12"
+stroke="#2563EB" stroke-width="2"/>
+</svg>
+</div>
+
+<h4>BC / MBC Scholarships</h4>
+
+<p>BC / MBC Students</p>
+
+</div>
+
+
+<div class="scholarship-card">
+
+<div class="scholarship-icon merit">
+<svg viewBox="0 0 24 24" fill="none">
+<path d="M12 2L15 9H22L16.5 13L18.5 20L12 16L5.5 20L7.5 13L2 9H9L12 2Z"
+stroke="#EC4899" stroke-width="2"/>
+</svg>
+</div>
+
+<h4>Merit Scholarships</h4>
+
+<p>Merit Based</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="eligibility-flow">
+
+<div class="container">
+
+<div class="flow-layout">
+
+<!-- ELIGIBILITY -->
+
+<div class="eligibility-card">
+
+<h2>
+நீங்கள் படிக்கும் வகுப்பு எது?
+</h2>
+
+<p>
+உங்கள் கல்வி நிலையை தேர்வு செய்யவும்
+</p>
+
+<div class="education-grid">
+
+<div class="edu-card">
+<div class="edu-icon">10</div>
+<span>10th</span>
+</div>
+
+<div class="edu-card">
+<div class="edu-icon">12</div>
+<span>12th</span>
+</div>
+
+<div class="edu-card">
+<div class="edu-icon">D</div>
+<span>Diploma</span>
+</div>
+
+<div class="edu-card">
+<div class="edu-icon">UG</div>
+<span>UG</span>
+</div>
+
+<div class="edu-card">
+<div class="edu-icon">PG</div>
+<span>PG</span>
+</div>
+
+</div>
+
+<!-- SERVICE FLOW -->
+
+<div class="service-card">
+
+<h2>
+எங்கள் சேவை செயல் முறை
+</h2>
+
+<div class="flow-list">
+
+<div class="flow-item">
+<div class="flow-number">1</div>
+<div>
+<h4>விவரங்கள் சமர்ப்பித்தல்</h4>
+<p>Student details submit</p>
+</div>
+</div>
+
+<div class="flow-item">
+<div class="flow-number">2</div>
+<div>
+<h4>தகுதி சரிபார்ப்பு</h4>
+<p>₹99 மட்டும்</p>
+</div>
+</div>
+
+<div class="flow-item">
+<div class="flow-number">3</div>
+<div>
+<h4>Verification Call</h4>
+<p>தகவல் உறுதிப்படுத்தல்</p>
+</div>
+</div>
+
+<div class="flow-item">
+<div class="flow-number">4</div>
+<div>
+<h4>ஆவணங்கள் Upload</h4>
+<p>Documents Submission</p>
+</div>
+</div>
+
+<div class="flow-item">
+<div class="flow-number">5</div>
+<div>
+<h4>Application Assistance</h4>
+<p>₹299 மட்டும்</p>
+</div>
+</div>
+
+<div class="flow-item">
+<div class="flow-number">6</div>
+<div>
+<h4>விண்ணப்ப சமர்ப்பிப்பு</h4>
+<p>Final Submission</p>
+</div>
+</div>
+
+<div class="flow-item">
+<div class="flow-number">7</div>
+<div>
+<h4>Status Update</h4>
+<p>Application Tracking</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="documents-section">
+
+<div class="container">
+
+<h2 class="section-heading">
+தேவையான ஆவணங்கள்
+</h2>
+
+<p class="section-subtitle">
+Scholarship விண்ணப்பத்திற்கு தேவையான ஆவணங்கள்
+</p>
+
+<div class="documents-grid">
+
+<!-- Aadhaar -->
+
+<div class="doc-card">
+
+<div class="doc-icon aadhaar">
+
+<svg viewBox="0 0 24 24" fill="none">
+<path d="M12 3C8 3 5 6 5 10V21H19V10C19 6 16 3 12 3Z" stroke="#2563EB" stroke-width="2"/>
+<circle cx="12" cy="10" r="2" stroke="#2563EB" stroke-width="2"/>
+</svg>
+
+</div>
+
+<div>
+<h4>Aadhaar Card</h4>
+<p>Identity Verification</p>
+</div>
+
+</div>
+
+<!-- Income -->
+
+<div class="doc-card">
+
+<div class="doc-icon income">
+
+<svg viewBox="0 0 24 24" fill="none">
+<path d="M8 6H16" stroke="#16A34A" stroke-width="2"/>
+<path d="M8 12H16" stroke="#16A34A" stroke-width="2"/>
+<path d="M8 18H12" stroke="#16A34A" stroke-width="2"/>
+<rect x="4" y="3" width="16" height="18" rx="2"
+stroke="#16A34A" stroke-width="2"/>
+</svg>
+
+</div>
+
+<div>
+<h4>Income Certificate</h4>
+<p>Financial Eligibility</p>
+</div>
+
+</div>
+
+<!-- Marksheet -->
+
+<div class="doc-card">
+
+<div class="doc-icon mark">
+
+<svg viewBox="0 0 24 24" fill="none">
+<rect x="5" y="3" width="14" height="18" rx="2"
+stroke="#9333EA" stroke-width="2"/>
+<path d="M8 8H16" stroke="#9333EA" stroke-width="2"/>
+<path d="M8 13H16" stroke="#9333EA" stroke-width="2"/>
+</svg>
+
+</div>
+
+<div>
+<h4>Mark Sheets</h4>
+<p>Academic Verification</p>
+</div>
+
+</div>
+
+<!-- Bank -->
+
+<div class="doc-card">
+
+<div class="doc-icon bank">
+
+<svg viewBox="0 0 24 24" fill="none">
+<path d="M3 10L12 4L21 10" stroke="#EA580C" stroke-width="2"/>
+<path d="M5 10V20" stroke="#EA580C" stroke-width="2"/>
+<path d="M12 10V20" stroke="#EA580C" stroke-width="2"/>
+<path d="M19 10V20" stroke="#EA580C" stroke-width="2"/>
+</svg>
+
+</div>
+
+<div>
+<h4>Bank Passbook</h4>
+<p>Bank Account Details</p>
+</div>
+
+</div>
+
+<!-- Community -->
+
+<div class="doc-card">
+
+<div class="doc-icon community">
+
+<svg viewBox="0 0 24 24" fill="none">
+<circle cx="8" cy="8" r="3" stroke="#EC4899" stroke-width="2"/>
+<circle cx="16" cy="8" r="3" stroke="#EC4899" stroke-width="2"/>
+<path d="M4 20C4 16 7 14 8 14" stroke="#EC4899" stroke-width="2"/>
+<path d="M20 20C20 16 17 14 16 14" stroke="#EC4899" stroke-width="2"/>
+</svg>
+
+</div>
+
+<div>
+<h4>Community Certificate</h4>
+<p>Category Verification</p>
+</div>
+
+</div>
+
+<!-- Photo -->
+
+<div class="doc-card">
+
+<div class="doc-icon photo">
+
+<svg viewBox="0 0 24 24" fill="none">
+<rect x="4" y="4" width="16" height="16" rx="2"
+stroke="#06B6D4" stroke-width="2"/>
+<circle cx="12" cy="10" r="3"
+stroke="#06B6D4" stroke-width="2"/>
+</svg>
+
+</div>
+
+<div>
+<h4>Passport Photo</h4>
+<p>Recent Photograph</p>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SERVICE CARDS -->
+
+<div class="service-grid">
+
+<div class="price-card verification">
+
+<h3>தகுதி சரிபார்ப்பு சேவை</h3>
+
+<div class="price">
+₹99
+</div>
+
+<ul>
+<li>Eligibility Check</li>
+<li>Scholarship Matching</li>
+<li>Verification Support</li>
+<li>Expert Guidance</li>
+</ul>
+
+</div>
+
+
+<div class="price-card application">
+
+<h3>விண்ணப்ப உதவி சேவை</h3>
+
+<div class="price">
+₹299
+</div>
+
+<ul>
+<li>Application Filling</li>
+<li>Document Support</li>
+<li>Submission Guidance</li>
+<li>Status Tracking</li>
+</ul>
+
+</div>
+
+
+<div class="price-card disclaimer">
+
+<h3>முக்கிய தகவல்</h3>
+
+<ul>
+<li>Scholarship approval provider முடிவைப் பொறுத்தது.</li>
+
+<li>நாங்கள் Application Assistance மட்டும் வழங்குகிறோம்.</li>
+
+<li>Approval உறுதி செய்யப்படாது.</li>
+
+<li>100% Transparent Service.</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- FAQ SECTION -->
+
+<section class="faq-section">
+
+    <h2 class="section-heading">
+        அடிக்கடி கேட்கப்படும் கேள்விகள்
+    </h2>
+
+    <p class="section-subtitle">
+        Frequently Asked Questions
+    </p>
+
+    <div class="faq-container">
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+
+                <span class="faq-text">
+                    Scholarship approval உறுதியா?
+                </span>
+
+                <span class="faq-icon">+</span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                <div class="faq-answer-inner">
+
+                    Scholarship approval scholarship provider-ன்
+                    eligibility criteria மற்றும் final decision-ஐ
+                    பொறுத்தது.
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+
+                <span class="faq-text">
+                    ₹99 கட்டணம் எதற்காக?
+                </span>
+
+                <span class="faq-icon">+</span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                <div class="faq-answer-inner">
+
+                    Eligibility Verification,
+                    Scholarship Matching மற்றும்
+                    Basic Guidance சேவைகளுக்காக.
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+
+                <span class="faq-text">
+                    ₹299 கட்டணம் எதற்காக?
+                </span>
+
+                <span class="faq-icon">+</span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                <div class="faq-answer-inner">
+
+                    Application Filling,
+                    Document Support,
+                    Submission Guidance மற்றும்
+                    Status Tracking சேவைகளுக்காக.
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+
+                <span class="faq-text">
+                    எந்த Scholarship களுக்கு உதவுகிறீர்கள்?
+                </span>
+
+                <span class="faq-icon">+</span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                <div class="faq-answer-inner">
+
+                    Government,
+                    Central,
+                    Minority,
+                    Merit,
+                    BC/MBC,
+                    SC/ST மற்றும் பல Scholarship
+                    திட்டங்களுக்கு உதவுகிறோம்.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+document.querySelectorAll('.faq-question').forEach(button => {
+
+    button.addEventListener('click', () => {
+
+        const faqItem = button.parentElement;
+
+        faqItem.classList.toggle('active');
+
+        const icon = button.querySelector('.faq-icon');
+
+        if(faqItem.classList.contains('active')){
+
+            icon.textContent = "−";
+
+        }else{
+
+            icon.textContent = "+";
+
+        }
+
+    });
+
+});
+
+</script>
+
+
+<div class="legal-disclaimer">
+
+<div class="legal-icon">
+
+<div class="legal-icon">
+
+<svg viewBox="0 0 24 24" fill="none">
+
+<path d="M12 3V21"
+stroke="#2563EB"
+stroke-width="2"
+stroke-linecap="round"/>
+
+<path d="M6 6H18"
+stroke="#2563EB"
+stroke-width="2"
+stroke-linecap="round"/>
+
+<path d="M8 6L5 11H11L8 6Z"
+stroke="#2563EB"
+stroke-width="2"
+stroke-linejoin="round"/>
+
+<path d="M16 6L13 11H19L16 6Z"
+stroke="#2563EB"
+stroke-width="2"
+stroke-linejoin="round"/>
+
+<path d="M8 21H16"
+stroke="#2563EB"
+stroke-width="2"
+stroke-linecap="round"/>
+
+</svg>
+
+</div>
+
+</div>
+
+<h3>சட்ட அறிவிப்பு (Legal Disclaimer)</h3>
+
+<p>
+
+Justin Scholarship Portal என்பது ஒரு
+<strong>Scholarship Application Assistance Service</strong>
+மட்டுமே.
+
+நாங்கள் எந்த Scholarship-ஐயும் வழங்குவதில்லை,
+அங்கீகரிப்பதில்லை அல்லது Approval செய்ய அதிகாரம் பெற்ற
+அமைப்பும் அல்ல.
+
+</p>
+
+<p>
+
+Scholarship வழங்குதல், Approval, Rejection மற்றும்
+Eligibility முடிவுகள் அனைத்தும் சம்பந்தப்பட்ட
+அரசு, தனியார் அல்லது கல்வி நிறுவனங்களின்
+விதிமுறைகளின் அடிப்படையில் தீர்மானிக்கப்படும்.
+
+</p>
+
+<p>
+
+இந்த சேவையானது தகவல் சரிபார்ப்பு,
+விண்ணப்ப உதவி, ஆவண வழிகாட்டுதல் மற்றும்
+சமர்ப்பிப்பு உதவி ஆகியவற்றிற்கு மட்டுமே
+வரையறுக்கப்பட்டுள்ளது.
+
+</p>
+
+<p>
+
+Information Technology Act, 2000 மற்றும்
+Consumer Protection Act, 2019 ஆகியவற்றின்
+பொது சட்டக் கொள்கைகளின்படி,
+Justin Scholarship Portal எந்த Scholarship
+Approval-க்கும் உத்தரவாதம் வழங்காது.
+
+</p>
+
+</div>
+
+<div class="law-note">
+📜 Scholarship approval is solely determined by the respective scholarship provider.
+</div>
+
+<section class="service-benefits">
+
+<h2 class="section-title">
+எங்கள் சேவையில் அடங்கிய உதவிகள்
+</h2>
+
+<p class="section-subtitle">
+Scholarship விண்ணப்ப செயல்முறைக்கு தேவையான முக்கிய உதவிகள்
+</p>
+
+<div class="benefits-grid">
+
+<div class="benefit-card">
+<div class="benefit-icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+<path d="M12 3L4 7V12C4 17 7.5 20.7 12 22C16.5 20.7 20 17 20 12V7L12 3Z" stroke-width="2"/>
+<path d="M9 12L11 14L15 10" stroke-width="2"/>
+</svg>
+</div>
+<h3>Eligibility Review</h3>
+<p>Scholarship தகுதி மதிப்பாய்வு</p>
+</div>
+
+<div class="benefit-card">
+<div class="benefit-icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+<circle cx="11" cy="11" r="7" stroke-width="2"/>
+<path d="M20 20L17 17" stroke-width="2"/>
+</svg>
+</div>
+<h3>Scholarship Matching</h3>
+<p>பொருத்தமான Scholarship கண்டறிதல்</p>
+</div>
+
+<div class="benefit-card">
+<div class="benefit-icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+<path d="M7 3H17V21H7Z" stroke-width="2"/>
+<path d="M10 8H14" stroke-width="2"/>
+<path d="M10 12H14" stroke-width="2"/>
+</svg>
+</div>
+<h3>Document Check</h3>
+<p>ஆவண சரிபார்ப்பு வழிகாட்டுதல்</p>
+</div>
+
+<div class="benefit-card">
+<div class="benefit-icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+<path d="M4 4H20V20H4Z" stroke-width="2"/>
+<path d="M8 12H16" stroke-width="2"/>
+<path d="M12 8V16" stroke-width="2"/>
+</svg>
+</div>
+<h3>Application Support</h3>
+<p>விண்ணப்ப உதவி</p>
+</div>
+
+<div class="benefit-card">
+<div class="benefit-icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+<circle cx="12" cy="12" r="9" stroke-width="2"/>
+<path d="M12 7V12L15 15" stroke-width="2"/>
+</svg>
+</div>
+<h3>Status Tracking</h3>
+<p>நிலை கண்காணிப்பு உதவி</p>
+</div>
+
+<div class="benefit-card">
+<div class="benefit-icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+<path d="M5 18V10" stroke-width="2"/>
+<path d="M12 18V6" stroke-width="2"/>
+<path d="M19 18V13" stroke-width="2"/>
+</svg>
+</div>
+<h3>Student Helpdesk</h3>
+<p>மாணவர் உதவி மையம்</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<footer class="premium-footer">
+
+<div class="footer-container">
+
+<h2 class="footer-title">
+Thanks For Visiting
+</h2>
+
+<p class="footer-brand">
+JUSTIN SCHOLARSHIP PORTAL
+</p>
+
+<div class="footer-grid">
+
+<!-- CONTACT -->
+
+<div class="footer-card">
+
+<div class="footer-icon">
+
+<svg viewBox="0 0 24 24" fill="none">
+<path d="M22 16.92V19.92C22 20.47 21.55 20.92 21 20.92C10.51 20.92 2 12.41 2 1.92C2 1.37 2.45 0.92 3 0.92H6C6.55 0.92 7 1.37 7 1.92V4.92L4.5 6.42C5.3 10.1 8.2 13 11.88 13.8L13.38 11.3H16.38C16.93 11.3 17.38 11.75 17.38 12.3V15.3L22 16.92Z"
+stroke="currentColor"
+stroke-width="1.8"/>
+</svg>
+
+</div>
+
+<div>
+<h4>Contact</h4>
+<p>9585777979</p>
+</div>
+
+</div>
+
+<!-- LOCATION -->
+
+<div class="footer-card">
+
+<div class="footer-icon">
+
+<svg viewBox="0 0 24 24" fill="none">
+<path d="M12 21C12 21 19 14.5 19 9.5C19 5.91 15.87 3 12 3C8.13 3 5 5.91 5 9.5C5 14.5 12 21 12 21Z"
+stroke="currentColor"
+stroke-width="1.8"/>
+<circle cx="12" cy="9.5" r="2.5"
+stroke="currentColor"
+stroke-width="1.8"/>
+</svg>
+
+</div>
+
+<div>
+<h4>Location</h4>
+<p>Dindigul (Remote)</p>
+</div>
+
+</div>
+
+<!-- EMAIL -->
+
+<div class="footer-card">
+
+<div class="footer-icon">
+
+<svg viewBox="0 0 24 24" fill="none">
+<rect x="3" y="5"
+width="18"
+height="14"
+rx="2"
+stroke="currentColor"
+stroke-width="1.8"/>
+
+<path d="M4 7L12 13L20 7"
+stroke="currentColor"
+stroke-width="1.8"/>
+</svg>
+
+</div>
+
+<div>
+<h4>Email</h4>
+<p>Justindgl1978@gmail.com</p>
+</div>
+
+</div>
+
+<!-- WORKING HOURS -->
+
+<div class="footer-card">
+
+<div class="footer-icon">
+
+<svg viewBox="0 0 24 24" fill="none">
+<circle cx="12" cy="12"
+r="9"
+stroke="currentColor"
+stroke-width="1.8"/>
+
+<path d="M12 7V12L15 15"
+stroke="currentColor"
+stroke-width="1.8"/>
+</svg>
+
+</div>
+
+<div>
+<h4>Monday - Friday</h4>
+<p>10:00 AM - 10:00 PM</p>
+</div>
+
+</div>
+
+<!-- SUNDAY -->
+
+<div class="footer-card">
+
+<div class="footer-icon">
+
+<svg viewBox="0 0 24 24" fill="none">
+<rect x="4"
+y="5"
+width="16"
+height="15"
+rx="2"
+stroke="currentColor"
+stroke-width="1.8"/>
+
+<path d="M8 3V7"
+stroke="currentColor"
+stroke-width="1.8"/>
+
+<path d="M16 3V7"
+stroke="currentColor"
+stroke-width="1.8"/>
+</svg>
+
+</div>
+
+<div>
+<h4>Sunday</h4>
+<p>10:00 AM - 7:00 PM</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>
+© 2026 Justin Scholarship Portal. All Rights Reserved.
+</p>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- WHATSAPP -->
+
+<a href="https://wa.me/91XXXXXXXXXX"
+target="_blank"
+class="whatsapp-float">
+
+<svg viewBox="0 0 24 24" fill="none">
+
+<path d="M20 12C20 16.4 16.4 20 12 20C10.5 20 9.1 19.6 7.9 18.9L4 20L5.1 16.1C4.4 14.9 4 13.5 4 12C4 7.6 7.6 4 12 4C16.4 4 20 7.6 20 12Z"
+stroke="white"
+stroke-width="2"/>
+
+<path d="M9 9C9.5 12 12 14.5 15 15"
+stroke="white"
+stroke-width="2"/>
+
+</svg>
+
+</a>
+
+<script>
+
+document.querySelectorAll('.faq-question')
+.forEach(button=>{
+
+button.addEventListener('click',()=>{
+
+const answer=
+button.nextElementSibling;
+
+answer.style.display=
+answer.style.display==="block"
+? "none"
+: "block";
+
+});
+
+});
+
+</script>
+<script>
+
+window.addEventListener("load",function(){
+
+setTimeout(function(){
+
+document.getElementById("loader").style.opacity="0";
+
+setTimeout(function(){
+document.getElementById("loader").style.display="none";
+},500);
+
+},1800);
+
+});
+
+</script>
+
+</body>
+</html>
