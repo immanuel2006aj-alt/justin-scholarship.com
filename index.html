@@ -4134,13 +4134,14 @@ document.getElementById("loader").style.display="none";
 }
    </script>
    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 
 <script>
 const supabaseUrl =
 'https://vjkczneqsiwkkwikllhe.supabase.co';
 
 const supabaseKey =
-'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZqa2N6bmVxc2l3a2t3aWtsbGhlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE3NTE1NDMsImV4cCI6MjA5NzMyNzU0M30.fxA1OF_oo9h9uHeEgjuGt2FqlEr7wlYpo-o20FPRPJ0';
+'sb_publishable_kQ-s7xKNGUClXIzuMXfbzw_unncCHDO';
 
 const supabase =
 window.supabase.createClient(
@@ -4150,83 +4151,82 @@ window.supabase.createClient(
 
 async function addVisitor() {
 
-  try {
+  const { error } = await supabase
+    .from('visitors')
+    .insert([
+      { count: 1 }
+    ]);
 
-    await supabase
-      .from('visitors')
-      .insert([
-        { count: 1 }
-      ]);
-
-  } catch(err) {
-    console.log(err);
+  if (error) {
+    console.log('INSERT ERROR:', error);
+    return false;
   }
 
+  return true;
 }
 
 async function loadStats() {
 
-  try {
+  const { data, error } = await supabase
+    .from('visitors')
+    .select('*');
 
-    const { data, error } =
-    await supabase
-      .from('visitors')
-      .select('*');
+  if (error) {
+    console.log('SELECT ERROR:', error);
+    return;
+  }
 
-    if(error) {
-      console.log(error);
-      return;
-    }
+  const total = data.length;
 
-    const total = data.length;
+  const totalEl =
+    document.getElementById('totalVisitors');
 
-    document.getElementById(
-      'totalVisitors'
-    ).textContent = total;
+  const todayEl =
+    document.getElementById('todayVisitors');
 
-    const today =
+  const onlineEl =
+    document.getElementById('onlineUsers');
+
+  if (totalEl)
+    totalEl.textContent = total;
+
+  const today =
     new Date()
-      .toISOString()
-      .split('T')[0];
+    .toISOString()
+    .split('T')[0];
 
-    const todayCount =
+  const todayCount =
     data.filter(row =>
       row.created_at &&
       row.created_at.startsWith(today)
     ).length;
 
-    document.getElementById(
-      'todayVisitors'
-    ).textContent = todayCount;
+  if (todayEl)
+    todayEl.textContent = todayCount;
 
-    document.getElementById(
-      'onlineUsers'
-    ).textContent =
-    Math.max(
-      1,
-      Math.floor(total * 0.05)
-    );
-
-  } catch(err) {
-
-    console.log(err);
-
-  }
-
+  if (onlineEl)
+    onlineEl.textContent =
+      Math.max(
+        1,
+        Math.floor(total * 0.05)
+      );
 }
 
 (async () => {
 
-  await addVisitor();
+  const inserted =
+    await addVisitor();
+
+  if (inserted) {
+    console.log('Visitor added');
+  }
 
   await loadStats();
 
 })();
 
-setInterval(
-  loadStats,
-  10000
-);
+setInterval(loadStats, 10000);
+
 </script>
 
 </body>
