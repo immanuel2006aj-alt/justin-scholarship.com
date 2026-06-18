@@ -4136,7 +4136,6 @@ document.getElementById("loader").style.display="none";
    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 
 <script>
-
 const supabaseUrl =
 'https://vjkczneqsiwkkwikllhe.supabase.co';
 
@@ -4145,60 +4144,89 @@ const supabaseKey =
 
 const supabase =
 window.supabase.createClient(
-supabaseUrl,
-supabaseKey
+  supabaseUrl,
+  supabaseKey
 );
 
-async function loadStats(){
+async function addVisitor() {
 
-const { data } =
-await supabase
-.from('visitors')
-.select('*');
+  try {
 
-let total = data.length;
+    await supabase
+      .from('visitors')
+      .insert([
+        { count: 1 }
+      ]);
 
-document.getElementById(
-'totalVisitors'
-).textContent = total;
-
-const today =
-new Date().toISOString().split('T')[0];
-
-const todayCount =
-data.filter(x =>
-x.created_at.startsWith(today)
-).length;
-
-document.getElementById(
-'todayVisitors'
-).textContent = todayCount;
-
-document.getElementById(
-'onlineUsers'
-).textContent =
-Math.floor(Math.random()*15)+5;
+  } catch(err) {
+    console.log(err);
+  }
 
 }
 
-async function addVisitor(){
+async function loadStats() {
 
-await supabase
-.from('visitors')
-.insert([
-{
-count:1
+  try {
+
+    const { data, error } =
+    await supabase
+      .from('visitors')
+      .select('*');
+
+    if(error) {
+      console.log(error);
+      return;
+    }
+
+    const total = data.length;
+
+    document.getElementById(
+      'totalVisitors'
+    ).textContent = total;
+
+    const today =
+    new Date()
+      .toISOString()
+      .split('T')[0];
+
+    const todayCount =
+    data.filter(row =>
+      row.created_at &&
+      row.created_at.startsWith(today)
+    ).length;
+
+    document.getElementById(
+      'todayVisitors'
+    ).textContent = todayCount;
+
+    document.getElementById(
+      'onlineUsers'
+    ).textContent =
+    Math.max(
+      1,
+      Math.floor(total * 0.05)
+    );
+
+  } catch(err) {
+
+    console.log(err);
+
+  }
+
 }
-]);
 
-loadStats();
+(async () => {
 
-}
+  await addVisitor();
 
-addVisitor();
+  await loadStats();
 
-setInterval(loadStats,10000);
+})();
 
+setInterval(
+  loadStats,
+  10000
+);
 </script>
 
 </body>
