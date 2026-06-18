@@ -4133,10 +4133,11 @@ document.getElementById("loader").style.display="none";
 "telephone":"+91-9585777979"
 }
    </script>
-   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
+
 const supabaseUrl =
 'https://vjkczneqsiwkkwikllhe.supabase.co';
 
@@ -4151,83 +4152,78 @@ window.supabase.createClient(
 
 async function addVisitor() {
 
-  const { error } = await supabase
+  const { error } =
+  await supabase
     .from('visitors')
     .insert([
       { count: 1 }
     ]);
 
   if (error) {
-    console.log('INSERT ERROR:', error);
-    return false;
+    console.log(error);
   }
 
-  return true;
 }
 
 async function loadStats() {
 
-  const { data, error } = await supabase
+  const { data, error } =
+  await supabase
     .from('visitors')
     .select('*');
 
   if (error) {
-    console.log('SELECT ERROR:', error);
+    console.log(error);
     return;
   }
 
-  const total = data.length;
+  const total = data ? data.length : 0;
 
-  const totalEl =
-    document.getElementById('totalVisitors');
-
-  const todayEl =
-    document.getElementById('todayVisitors');
-
-  const onlineEl =
-    document.getElementById('onlineUsers');
-
-  if (totalEl)
-    totalEl.textContent = total;
+  document.getElementById(
+    'totalVisitors'
+  ).textContent = total;
 
   const today =
-    new Date()
-    .toISOString()
-    .split('T')[0];
+  new Date()
+  .toISOString()
+  .split('T')[0];
 
   const todayCount =
-    data.filter(row =>
-      row.created_at &&
-      row.created_at.startsWith(today)
-    ).length;
+  data.filter(row =>
+    row.created_at &&
+    row.created_at.startsWith(today)
+  ).length;
 
-  if (todayEl)
-    todayEl.textContent = todayCount;
+  document.getElementById(
+    'todayVisitors'
+  ).textContent = todayCount;
 
-  if (onlineEl)
-    onlineEl.textContent =
-      Math.max(
-        1,
-        Math.floor(total * 0.05)
-      );
+  document.getElementById(
+    'onlineUsers'
+  ).textContent =
+  Math.max(
+    1,
+    Math.floor(total * 0.05)
+  );
+
 }
 
-(async () => {
+window.addEventListener(
+  'load',
+  async () => {
 
-  const inserted =
     await addVisitor();
 
-  if (inserted) {
-    console.log('Visitor added');
+    await loadStats();
+
+    setInterval(
+      loadStats,
+      10000
+    );
+
   }
-
-  await loadStats();
-
-})();
-
-setInterval(loadStats, 10000);
+);
 
 </script>
-
 </body>
 </html>
