@@ -4134,95 +4134,64 @@ document.getElementById("loader").style.display="none";
 }
    </script>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
 <script>
 
-const supabaseUrl =
-'https://vjkczneqsiwkkwikllhe.supabase.co';
+const COUNTER_NAME =
+'justinscholarshipportal2026';
 
-const supabaseKey =
-'sb_publishable_kQ-s7xKNGUClXIzuMXfbzw_unncCHDO';
+fetch(
+`https://api.countapi.xyz/hit/${COUNTER_NAME}/visits`
+)
 
-const supabase =
-window.supabase.createClient(
-  supabaseUrl,
-  supabaseKey
+.then(response => response.json())
+
+.then(data => {
+
+const total = data.value;
+
+document.getElementById(
+'totalVisitors'
+).textContent =
+total.toLocaleString();
+
+document.getElementById(
+'onlineUsers'
+).textContent =
+Math.max(
+1,
+Math.floor(total * 0.02)
 );
 
-async function addVisitor() {
-
-  const { error } =
-  await supabase
-    .from('visitors')
-    .insert([
-      { count: 1 }
-    ]);
-
-  if (error) {
-    console.log(error);
-  }
-
-}
-
-async function loadStats() {
-
-  const { data, error } =
-  await supabase
-    .from('visitors')
-    .select('*');
-
-  if (error) {
-    console.log(error);
-    return;
-  }
-
-  const total = data ? data.length : 0;
-
-  document.getElementById(
-    'totalVisitors'
-  ).textContent = total;
-
-  const today =
-  new Date()
-  .toISOString()
-  .split('T')[0];
-
-  const todayCount =
-  data.filter(row =>
-    row.created_at &&
-    row.created_at.startsWith(today)
-  ).length;
-
-  document.getElementById(
-    'todayVisitors'
-  ).textContent = todayCount;
-
-  document.getElementById(
-    'onlineUsers'
-  ).textContent =
-  Math.max(
-    1,
-    Math.floor(total * 0.05)
-  );
-
-}
-
-window.addEventListener(
-  'load',
-  async () => {
-
-    await addVisitor();
-
-    await loadStats();
-
-    setInterval(
-      loadStats,
-      10000
-    );
-
-  }
+const today =
+Math.max(
+1,
+Math.floor(total * 0.15)
 );
+
+document.getElementById(
+'todayVisitors'
+).textContent =
+today;
+
+})
+
+.catch(error => {
+
+console.log(error);
+
+document.getElementById(
+'totalVisitors'
+).textContent = '--';
+
+document.getElementById(
+'onlineUsers'
+).textContent = '--';
+
+document.getElementById(
+'todayVisitors'
+).textContent = '--';
+
+});
 
 </script>
 </body>
