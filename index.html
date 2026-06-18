@@ -4135,26 +4135,69 @@ document.getElementById("loader").style.display="none";
    </script>
 
 <script>
-fetch('https://countapi.mileshilliard.com/api/v1/hit/justinscholarshipportal2026')
+
+fetch(
+'https://countapi.mileshilliard.com/api/v1/hit/justinscholarship-fwh-is'
+)
 
 .then(response => response.json())
 
 .then(data => {
 
-document.getElementById('totalVisitors').textContent =
-data.value;
+const total =
+parseInt(data.value || 0);
 
-document.getElementById('onlineUsers').textContent =
-Math.max(1, Math.floor(data.value * 0.02));
+document.getElementById(
+'totalVisitors'
+).textContent =
+total.toLocaleString();
 
-document.getElementById('todayVisitors').textContent =
-Math.max(1, Math.floor(data.value * 0.15));
+const online =
+Math.max(
+1,
+Math.floor(total * 0.03) +
+Math.floor(Math.random() * 5)
+);
+
+const today =
+Math.max(
+1,
+Math.ceil(total * 0.35)
+);
+
+document.getElementById(
+'onlineUsers'
+).textContent =
+online.toLocaleString();
+
+document.getElementById(
+'todayVisitors'
+).textContent =
+today.toLocaleString();
 
 })
 
-.catch(err => {
-console.log(err);
+.catch(error => {
+
+console.log(
+'Visitor Counter Error:',
+error
+);
+
+document.getElementById(
+'totalVisitors'
+).textContent = '--';
+
+document.getElementById(
+'onlineUsers'
+).textContent = '--';
+
+document.getElementById(
+'todayVisitors'
+).textContent = '--';
+
 });
+
 </script>
 </body>
 </html>
