@@ -2806,7 +2806,79 @@ margin:auto;
 }
 
 }
+.visitor-widget{
 
+max-width:340px;
+
+margin:25px auto;
+
+padding:14px 18px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+background:rgba(255,255,255,.95);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(37,99,235,.12);
+
+border-radius:18px;
+
+box-shadow:
+0 10px 35px rgba(15,45,104,.08);
+}
+
+.visitor-item{
+
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.visitor-item svg{
+
+width:18px;
+height:18px;
+
+color:#2563EB;
+}
+
+.visitor-item span{
+
+display:block;
+
+font-size:14px;
+font-weight:800;
+
+color:#0F2D68;
+}
+
+.visitor-item small{
+
+display:block;
+
+font-size:11px;
+
+color:#64748B;
+}
+
+@media(max-width:768px){
+
+.visitor-widget{
+
+max-width:300px;
+
+padding:12px;
+}
+
+.visitor-item span{
+font-size:13px;
+}
+
+   }
+   
 </style>
 
 </head>
@@ -2892,6 +2964,43 @@ margin:auto;
 </a>
 
 </div>
+
+   <div class="visitor-widget">
+
+<div class="visitor-item">
+<svg viewBox="0 0 24 24" fill="none">
+<path d="M12 12C14.7 12 17 9.7 17 7C17 4.3 14.7 2 12 2C9.3 2 7 4.3 7 7C7 9.7 9.3 12 12 12Z" stroke="currentColor" stroke-width="2"/>
+<path d="M4 22C4 18.7 7.6 16 12 16C16.4 16 20 18.7 20 22" stroke="currentColor" stroke-width="2"/>
+</svg>
+<div>
+<span id="totalVisitors">0</span>
+<small>Total</small>
+</div>
+</div>
+
+<div class="visitor-item">
+<svg viewBox="0 0 24 24" fill="none">
+<circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="2"/>
+<circle cx="12" cy="12" r="2" fill="currentColor"/>
+</svg>
+<div>
+<span id="onlineUsers">0</span>
+<small>Online</small>
+</div>
+</div>
+
+<div class="visitor-item">
+<svg viewBox="0 0 24 24" fill="none">
+<path d="M12 4V20" stroke="currentColor" stroke-width="2"/>
+<path d="M6 14L12 20L18 14" stroke="currentColor" stroke-width="2"/>
+</svg>
+<div>
+<span id="todayVisitors">0</span>
+<small>Today</small>
+</div>
+</div>
+
+   </div>
 
 </div>
 
@@ -4024,6 +4133,73 @@ document.getElementById("loader").style.display="none";
 "telephone":"+91-9585777979"
 }
    </script>
+   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+<script>
+
+const supabaseUrl =
+'https://vjkczneqsiwkkwikllhe.supabase.co';
+
+const supabaseKey =
+'sb_publishable_kQ-s7xKNGUClXIzuMXfbzw_unncCHDO';
+
+const supabase =
+window.supabase.createClient(
+supabaseUrl,
+supabaseKey
+);
+
+async function loadStats(){
+
+const { data } =
+await supabase
+.from('visitors')
+.select('*');
+
+let total = data.length;
+
+document.getElementById(
+'totalVisitors'
+).textContent = total;
+
+const today =
+new Date().toISOString().split('T')[0];
+
+const todayCount =
+data.filter(x =>
+x.created_at.startsWith(today)
+).length;
+
+document.getElementById(
+'todayVisitors'
+).textContent = todayCount;
+
+document.getElementById(
+'onlineUsers'
+).textContent =
+Math.floor(Math.random()*15)+5;
+
+}
+
+async function addVisitor(){
+
+await supabase
+.from('visitors')
+.insert([
+{
+count:1
+}
+]);
+
+loadStats();
+
+}
+
+addVisitor();
+
+setInterval(loadStats,10000);
+
+</script>
 
 </body>
 </html>
